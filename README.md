@@ -76,12 +76,12 @@ curl --location --request POST 'http://localhost:8080/users' \
 Obteniendo el siguiente resultado.
 ```json
 {
-  "id": "895bedc1-a69d-4f8c-9a57-40bcea76fe6d",
-  "created": "2023-02-17T02:14:32.406",
-  "modified": "2023-02-17T02:14:32.406",
-  "lastLogin": "2023-02-17T02:14:32.406",
-  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvYmFyZGFsZXNAZ21haWwuY29tIiwiZXhwIjoxNjc2NzA0NDcyLCJpYXQiOjE2NzY2MTgwNzJ9.QAjPXT9Rns5kQUXRhZPkPtPdV522zDjFTY_5nZpl9fF5Od4rfyn2j4J-7nTMFU_N1tw9A_OUPnq1lsOvI5qu8g",
-  "active": true
+    "id": "981561a5-4ee2-49b2-932a-ceac035cdfb0",
+    "created": "2024-04-24T00:19:19.116",
+    "modified": "2024-04-24T00:19:19.116",
+    "lastLogin": "2024-04-24T00:19:19.116",
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvYmFyZGFsZXNAZ21haWwuY29tIiwiZXhwIjoxNzE0MDIyMzU5LCJpYXQiOjE3MTM5MzU5NTl9.RygBJrwADQOWP13jyXdct-zfE65XxBy37UG4eK7VFgfAz94OP9h8n0EJswLwGn9yYcapARFoI8U4rOyYuk-mGA",
+    "isactive": true
 }
 ```
 
@@ -124,10 +124,7 @@ curl --location --request POST 'http://localhost:8080/users' \
 Obteniendo el siguiente mensaje:
 ```json
 {
-    "message": "Revisar las siguientes observaciones.",
-    "errors": [
-        "La clave de tener al menos: un caracter numérico, una minúscula, una mayúscula, un caracter especial ! @ # & ( ), y tener entre 10 a 128 caracteres."
-    ]
+    "mensaje": "[La clave de tener al menos: un caracter numérico, una minúscula, una mayúscula, un caracter especial ! @ # & ( ), y tener entre 10 a 128 caracteres., El correo no tiene el formato correcto.]"
 }
 ```
 
