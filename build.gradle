@@ -1,0 +1,66 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot' version '2.5.2'
+}
+
+
+group 'com.reto'
+version '0.0.1'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+configurations {
+	implementation {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+	}
+}
+
+
+
+dependencies {
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.5.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.5.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.5.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.5.2'
+
+	implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.2.8'
+	//runtimeOnly 'com.h2database:h2'
+	implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.70'
+	implementation ('io.jsonwebtoken:jjwt:0.9.1') { exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on '}
+	implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.4'
+
+	//for Hibernate in spring data-jpa
+	/*
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.2'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.4'
+    /*-*/
+
+	// https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+	//implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0' // Versión actual de springfox
+
+	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-jaxrs2
+	//implementation group: 'io.swagger.core.v3', name: 'swagger-jaxrs2', version: '2.1.10'
+
+	//* Eclipse Link
+	implementation ('org.springframework.boot:spring-boot-starter-data-jpa:2.5.2') {
+		exclude group: 'org.hibernate', module: 'hibernate-core'
+		exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
+		exclude group: 'org.hibernate', module: 'common-annotations'
+	}
+	implementation group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.7.10'
+	/*-*/
+
+
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+	testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.3.1'
+}
+
+test {
+	useJUnitPlatform()
+}
